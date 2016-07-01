@@ -1,0 +1,143 @@
+/* CSS for plugin: Debug Bar Plugin Activation */
+#debug-menu-target-Debug_Bar_Plugin_Activation h2 .count {
+    font-size: 28px;
+    color: #23282D;
+}
+
+#debug-menu-target-Debug_Bar_Plugin_Activation h3 {
+	font-family: georgia, times, serif;
+	font-size: 22px;
+	margin-top: 1.5em;
+	clear: both;
+}
+
+#debug-bar-plugin-activation-delete-all {
+	float: right !important;
+}
+
+#debug-bar-plugin-activation-delete-all a {
+	-moz-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5));
+	background: -moz-linear-gradient(top, #79bbff 5%, #378de5 100%);
+	background: -webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
+	background: -o-linear-gradient(top, #79bbff 5%, #378de5 100%);
+	background: -ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
+	background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5',GradientType=0);
+	background-color: #79bbff;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #84bbf3;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff !important;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none !important;
+	text-shadow: 0 1px 0 #528ecc;
+}
+#debug-bar-plugin-activation-delete-all a:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
+	background: -moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background: -webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background: -o-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background: -ms-linear-gradient(top, #378de5 5%, #79bbff 100%);
+	background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff',GradientType=0);
+	background-color: #378de5;
+}
+#debug-bar-plugin-activation-delete-all a:active {
+	position: relative;
+	top: 1px;
+}
+
+table.debug-bar-plugin-activation,
+table.debug-bar-plugin-activation th,
+table.debug-bar-plugin-activation td {
+	border: 0px none;
+}
+
+table.debug-bar-plugin-activation {
+	width: 100%;
+	border-collapse: collapse;
+	cell-padding: 1em;
+	clear: both;
+	line-height: 1.5;
+	font-size: 12px;
+	table-layout: auto;
+}
+table.debug-bar-plugin-activation thead th,
+table.debug-bar-plugin-activation tfoot th {
+	padding: 0.7em 5px;
+	width: auto;
+}
+table.debug-bar-plugin-activation thead th {
+	border-bottom: 1px solid #ccc;
+}
+table.debug-bar-plugin-activation tfoot th {
+	border-top: 1px solid #ccc;
+}
+
+table.debug-bar-plugin-activation th,
+table.debug-bar-plugin-activation td {
+	padding-left: 5px;
+	padding-right: 10px;
+}
+
+
+table.debug-bar-plugin-activation .col-1 {
+	width: 5%;
+	min-width: 55px;
+}
+table.debug-bar-plugin-activation .col-2 {
+	width: 25%;
+}
+table.debug-bar-plugin-activation .col-3 {
+	width: 70%;
+}
+
+table.debug-bar-plugin-activation tr td:nth-child(2) {
+	font-weight: bold;
+}
+
+table.debug-bar-plugin-activation th {
+	font-weight: bold;
+	padding: 2px 2em 2px 5px;
+	vertical-align: top;
+	text-align: left;
+}
+table.debug-bar-plugin-activation td {
+	padding: 2px 5px;
+	vertical-align: top;
+}
+
+table.debug-bar-plugin-activation tr:nth-child(2n+1) {
+	background-color: #E8E8E8;
+}
+
+table.debug-bar-plugin-activation td a .dashicons {
+	color: #585858;
+	text-decoration: none;
+}
+table.debug-bar-plugin-activation td a:hover .dashicons {
+	color: #cc0000;
+}
+
+table.debug-bar-plugin-activation .spinner {
+	background: no-repeat scroll 0 0 / 16px 16px rgba(0, 0, 0, 0);
+	visibility: hidden;
+	float: right;
+	height: 16px;
+	margin: 2px 0 0 4px;
+	opacity: 0.7;
+	width: 16px;
+	padding-right: 15px;
+}
+table.debug-bar-plugin-activation .spinner.is-active {
+	visibility: visible;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<ruleset name="Debug Bar Plugin Activation">
+	<description>The code standard for Debug Bar Plugin Activation is WordPress.</description>
+
+	<rule ref="WordPress">
+		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines" />
+		<exclude name="WordPress.VIP.RestrictedFunctions.error_log" />
+	</rule>
+	
+	
+	<!-- exclude the 'empty' index files from some documentation checks -->
+	<rule ref="Squiz.Commenting.FileComment.WrongStyle">
+		<exclude-pattern>*/index.php</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.InlineComment.SpacingAfter">
+		<exclude-pattern>*/index.php</exclude-pattern>
+	</rule>
+
+	<!-- exclude the test files from some documentation checks -->
+	<rule ref="Squiz.Commenting.FileComment">
+		<exclude-pattern>testfiles/*.php</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.BlockComment">
+		<exclude-pattern>testfiles/*.php</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.InlineComment">
+		<exclude-pattern>testfiles/*.php</exclude-pattern>
+	</rule>
+
+</ruleset>
