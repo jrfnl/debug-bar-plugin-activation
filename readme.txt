@@ -57,7 +57,7 @@ Ref: [Plugin Handbook](https://developer.wordpress.org/plugins/the-basics/activa
 = What about uninstalling ? =
 > Your plugin may need to do some clean-up when it is uninstalled from a site. A plugin is considered uninstalled if a user has deactivated the plugin, and then clicks the delete link.
 >
-> When your plugin is uninstalled, you’ll want to clear out any rewrite rules added by the plugin, options and/or settings specific to to the plugin, or other database values that need to be removed.
+> When your plugin is uninstalled, you'll want to clear out any rewrite rules added by the plugin, options and/or settings specific to to the plugin, or other database values that need to be removed.
 
 Ref: [Plugin Handbook](https://developer.wordpress.org/plugins/the-basics/uninstall-methods/)
 
