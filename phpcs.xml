@@ -2,6 +2,12 @@
 <ruleset name="Debug Bar Plugin Activation">
 	<description>The code standard for Debug Bar Plugin Activation is WordPress.</description>
 
+	<!-- ##### PHP cross-version compatibility ##### -->
+	<config name="testVersion" value="5.2-99.0"/>
+	<rule ref="PHPCompatibility"/>
+
+
+	<!-- ##### WordPress sniffs #####-->
 	<rule ref="WordPress">
 		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.error_log" />
