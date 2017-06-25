@@ -120,7 +120,7 @@ if ( ! class_exists( 'Debug_Bar_Plugin_Activation' ) && class_exists( 'Debug_Bar
 				'debugBarPluginActivation',
 				array(
 					'dbpa_nonce' => wp_create_nonce( 'debug-bar-plugin-activation' ),
-					'ajaxurl'	 => admin_url( 'admin-ajax.php' ),
+					'ajaxurl'    => admin_url( 'admin-ajax.php' ),
 					'spinner'    => admin_url( 'images/wpspin_light.gif' ),
 					'errorMsg'   => __( 'An error occurred', 'debug-bar-plugin-activation' ),
 				)

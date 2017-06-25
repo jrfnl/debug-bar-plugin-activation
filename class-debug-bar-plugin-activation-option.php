@@ -72,7 +72,6 @@ if ( ! class_exists( 'Debug_Bar_Plugin_Activation_Option' ) ) {
 			add_action( 'add_option', array( $this, 'add_default_filter' ) );
 			add_action( 'update_option', array( $this, 'add_default_filter' ) );
 
-
 			// Start buffering the output for those actions in which WP does not do so natively.
 			add_action( 'deactivate_plugin', array( $this, 'start_output_buffer' ) );
 			add_action( 'pre_uninstall_plugin', array( $this, 'start_output_buffer' ) );
@@ -232,8 +231,8 @@ if ( ! class_exists( 'Debug_Bar_Plugin_Activation_Option' ) ) {
 		 *
 		 * @static
 		 *
-		 * @param array	$defaults Entire list of supported defaults.
-		 * @param array	$options  Current options.
+		 * @param array $defaults Entire list of supported defaults.
+		 * @param array $options  Current options.
 		 *
 		 * @return array Combined and filtered options array.
 		 */

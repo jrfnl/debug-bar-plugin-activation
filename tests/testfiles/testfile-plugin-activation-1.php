@@ -1,10 +1,12 @@
 <?php
-/*
-Plugin Name: Testing Debug Bar Plugin Activation 1.
-Description: Testing Debug Bar Plugin Activation 1.
-Version:     1.0
-*/
-
+/**
+ * Plugin Name: Testing Debug Bar Plugin Activation 1.
+ * Description: Testing Debug Bar Plugin Activation 1.
+ * Version:     1.0
+ *
+ * @package     WordPress\Plugins\Debug Bar Plugin Activation
+ * @subpackage  Test
+ */
 
 if ( ! function_exists( 'testfile_pa1_activate' ) ) {
 	/**

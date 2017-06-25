@@ -2,35 +2,72 @@
 <ruleset name="Debug Bar Plugin Activation">
 	<description>The code standard for Debug Bar Plugin Activation is WordPress.</description>
 
+	<!-- Show progress & sniff codes. -->
+	<arg value="ps"/>
+	<!-- Only check PHP files. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Check all files in this directory and the directories below it. -->
+	<file>.</file>
+
 	<!-- ##### PHP cross-version compatibility ##### -->
 	<config name="testVersion" value="5.2-99.0"/>
 	<rule ref="PHPCompatibility"/>
 
 
 	<!-- ##### WordPress sniffs #####-->
-	<rule ref="WordPress">
-		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines" />
-		<exclude name="WordPress.VIP.RestrictedFunctions.error_log" />
+	<rule ref="WordPress"/>
+
+
+	<!-- ##### Customizations #####-->
+
+	<!-- Verify that the text_domain is set to the desired text-domain.
+		 Multiple valid text domains can be provided as a comma-delimited list. -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array" value="debug-bar-plugin-activation" />
+		</properties>
 	</rule>
+
+	<!-- Verify that everything in the global namespace is prefixed with a theme specific prefix.
+		 Multiple valid prefixes can be provided as a comma-delimited list. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="Debug_Bar_Plugin_Activation,db_plugin_activation,DB_PA" />
+		</properties>
+
+		<!-- Exclude the test plugin files as they are not part of the distribute plugin. -->
+		<exclude-pattern>*/tests/testfiles/*.php</exclude-pattern>
+	</rule>
+
+	<!-- Verify that no WP functions are used which are deprecated or have been removed.
+		 The minimum version set here should be in line with the minimum WP version
+		 supported by the Debug Bar extension. -->
+	<rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+			<property name="minimum_supported_version" value="3.8" />
+		</properties>
+	</rule>
+	<rule ref="WordPress.WP.DeprecatedClasses">
+		<properties>
+			<property name="minimum_supported_version" value="3.8" />
+		</properties>
+	</rule>
+
+
+	<!-- ##### Exlusions #####-->
 	
-	
-	<!-- exclude the 'empty' index files from some documentation checks -->
+	<!-- Exclude the test files from the trigger_error() function check as that's the whole point. -->
+	<rule ref="WordPress.PHP.DevelopmentFunctions.error_log_trigger_error">
+		<exclude-pattern>*/tests/testfiles/*.php</exclude-pattern>
+	</rule>
+
+	<!-- Exclude the 'empty' index files from some documentation checks. -->
 	<rule ref="Squiz.Commenting.FileComment.WrongStyle">
 		<exclude-pattern>*/index.php</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.InlineComment.SpacingAfter">
 		<exclude-pattern>*/index.php</exclude-pattern>
-	</rule>
-
-	<!-- exclude the test files from some documentation checks -->
-	<rule ref="Squiz.Commenting.FileComment">
-		<exclude-pattern>testfiles/*.php</exclude-pattern>
-	</rule>
-	<rule ref="Squiz.Commenting.BlockComment">
-		<exclude-pattern>testfiles/*.php</exclude-pattern>
-	</rule>
-	<rule ref="Squiz.Commenting.InlineComment">
-		<exclude-pattern>testfiles/*.php</exclude-pattern>
 	</rule>
 
 </ruleset>
