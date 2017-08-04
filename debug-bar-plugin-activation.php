@@ -96,7 +96,7 @@ if ( ! function_exists( 'debug_bar_plugin_activation_panel' ) ) {
 if ( ! class_exists( 'Debug_Bar_Plugin_Activation_Option' ) ) {
 	require_once 'class-debug-bar-plugin-activation-option.php';
 }
-$debug_bar_plugin_activation_option = new Debug_Bar_Plugin_Activation_Option;
+$debug_bar_plugin_activation_option = new Debug_Bar_Plugin_Activation_Option();
 
 
 if ( ! function_exists( 'debug_bar_plugin_activation_do_ajax' ) ) {
