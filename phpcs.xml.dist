@@ -16,7 +16,10 @@
 
 
 	<!-- ##### WordPress sniffs #####-->
-	<rule ref="WordPress"/>
+	<rule ref="WordPress">
+		<!-- No need to lint the PHP, this is done in a separate task in the travis script. -->
+		<exclude name="Generic.PHP.Syntax"/>
+	</rule>
 
 
 	<!-- ##### Customizations #####-->
@@ -25,7 +28,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="debug-bar-plugin-activation" />
+			<property name="text_domain" type="array" value="debug-bar-plugin-activation"/>
 		</properties>
 	</rule>
 
@@ -33,7 +36,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="Debug_Bar_Plugin_Activation,db_plugin_activation,DB_PA" />
+			<property name="prefixes" type="array" value="Debug_Bar_Plugin_Activation,db_plugin_activation,DB_PA"/>
 		</properties>
 
 		<!-- Exclude the test plugin files as they are not part of the distribute plugin. -->
@@ -43,14 +46,19 @@
 	<!-- Verify that no WP functions are used which are deprecated or have been removed.
 		 The minimum version set here should be in line with the minimum WP version
 		 supported by the Debug Bar extension. -->
-	<rule ref="WordPress.WP.DeprecatedFunctions">
-		<properties>
-			<property name="minimum_supported_version" value="3.8" />
-		</properties>
-	</rule>
 	<rule ref="WordPress.WP.DeprecatedClasses">
 		<properties>
-			<property name="minimum_supported_version" value="3.8" />
+			<property name="minimum_supported_version" value="3.8"/>
+		</properties>
+	</rule>
+	<rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+			<property name="minimum_supported_version" value="3.8"/>
+		</properties>
+	</rule>
+	<rule ref="WordPress.WP.DeprecatedParameters">
+		<properties>
+			<property name="minimum_supported_version" value="3.8"/>
 		</properties>
 	</rule>
 
