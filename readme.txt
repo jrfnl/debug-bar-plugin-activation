@@ -5,6 +5,7 @@ Tags: debugbar, debug-bar, Debug Bar, plugin activation, plugin deactivation, un
 Requires at least: 3.8
 Tested up to: 4.5
 Stable tag: 1.0
+Requires PHP: 5.2.4
 License: GPLv2
 
 Debug Bar Plugin Activation adds a new panel to the Debug Bar which displays plugin (de-)activation and uninstall errors.
