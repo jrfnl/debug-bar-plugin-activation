@@ -72,7 +72,9 @@ Have you read what it says in the beautifully red bar at the top of your plugins
 
 == Changelog ==
 
-= 1.0 (2016-07-02) =
+= 1.0 =
+_Release date: 2016-07-02_
+
 * Initial release.
 
 
