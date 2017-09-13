@@ -58,13 +58,24 @@ if ( ! class_exists( 'Debug_Bar_Plugin_Activation' ) && class_exists( 'Debug_Bar
 		 */
 		private static $textdomain_loaded = false;
 
+		/**
+		 * The translated panel name.
+		 *
+		 * Used by the Debug Bar for the menu title.
+		 * Set in the init() method.
+		 *
+		 * @var string
+		 */
+		private $i18n_title = '';
+
 
 		/**
 		 * Constructor.
 		 */
 		public function init() {
 			$this->load_textdomain( self::NAME );
-			$this->title( __( 'Plugin (de-)activation output', 'debug-bar-plugin-activation' ) );
+			$this->i18n_title = __( 'Plugin (de-)activation output', 'debug-bar-plugin-activation' );
+			$this->title( $this->i18n_title );
 			$this->set_visible( false );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -147,11 +158,11 @@ if ( ! class_exists( 'Debug_Bar_Plugin_Activation' ) && class_exists( 'Debug_Bar
 			if ( $total > 0 ) {
 				$this->set_visible( true );
 
-				// DB 0.9+ - change over to use version nr (defined + nr) if PR is accepted.
-				if ( method_exists( 'Debug_Bar', 'enable_debug_bar' ) ) {
-					$this->title( $this->title() . '<span class="debug-bar-issue-count">' . absint( $total ) . '</span>' );
+				// DB 0.10.0+ - presuming PR for the pretty numbers will be accepted & released as v0.10.0.
+				if ( defined( 'Debug_Bar::VERSION' ) && version_compare( Debug_Bar::VERSION, '0.10.0', '>=' ) ) {
+					$this->title( $this->i18n_title . '<span class="debug-bar-issue-count">' . absint( $total ) . '</span>' );
 				} else {
-					$this->title( $this->title() . '<span class="debug-bar-issue-count" style="float: right;">' . absint( $total ) . '</span>' );
+					$this->title( $this->i18n_title . '<span class="debug-bar-issue-count" style="float: right;">' . absint( $total ) . '</span>' );
 				}
 			}
 		}
