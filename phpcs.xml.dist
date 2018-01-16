@@ -65,6 +65,11 @@
 
 	<!-- ##### Exlusions #####-->
 	
+	<!-- Renaming the main file would deactivate the plugin. -->
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>*/debug-bar-plugin-activation\.php$</exclude-pattern>
+	</rule>
+
 	<!-- Exclude the test files from the trigger_error() function check as that's the whole point. -->
 	<rule ref="WordPress.PHP.DevelopmentFunctions.error_log_trigger_error">
 		<exclude-pattern>*/tests/testfiles/*.php</exclude-pattern>
